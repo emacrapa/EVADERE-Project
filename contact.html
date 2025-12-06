@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Progetto</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Progetto Lab Logo" class="brand-logo">
+        Progetto<span class="muted">Lab</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="news.html" class="nav-link">News</a>
+        <a href="jobs.html" class="nav-link">Open Positions</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>Contatti</h1>
+    <p>Per informazioni generali: <a href="mailto:info@example.com">info@example.com</a></p>
+
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Grazie! Il modulo è un placeholder.');">
+      <label>Nome</label>
+      <input type="text" name="name" required>
+      <label>Email</label>
+      <input type="email" name="email" required>
+      <label>Messaggio</label>
+      <textarea name="message" rows="6" required></textarea>
+      <button class="btn primary" type="submit">Invia</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year-contact"></span> Progetto Lab</div>
+      <div><a href="mailto:info@example.com">info@example.com</a></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

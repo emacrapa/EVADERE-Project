@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>News — Progetto</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Progetto Lab Logo" class="brand-logo">
+        Progetto<span class="muted">Lab</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="news.html" class="nav-link active">News</a>
+        <a href="jobs.html" class="nav-link">Open Positions</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h1>News & Aggiornamenti</h1>
+    <p>Elenco cronologico delle notizie. Clicca "Approfondisci" per leggere in dettaglio.</p>
+
+    <div class="news-list" id="news-list"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year-news"></span> Progetto Lab</div>
+      <div><a href="mailto:info@example.com">info@example.com</a></div>
+    </div>
+  </footer>
+
+  <!-- MODAL template -->
+  <div id="news-modal" class="news-modal hidden" aria-hidden="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Chiudi">×</button>
+      <div class="modal-inner">
+        <aside class="modal-progress" id="modal-progress">
+          <div class="progress-bar" id="progress-bar"></div>
+        </aside>
+
+        <article class="modal-content" id="modal-content">
+          <h2 id="modal-title">Titolo completo</h2>
+          <div class="meta" id="modal-meta"><span class="date">2025-11-28</span> • <span class="author">Autore</span></div>
+          <div class="modal-article" id="modal-article" tabindex="0">
+            <!-- testo lungo qui -->
+            <p>Qui il contenuto completo della notizia. Lorem ipsum dolor sit amet, consectetur...</p>
+            <p>(Aggiungi più paragrafi per testare lo scroll interno e la progress bar.)</p>
+            <p>Fine dell'articolo.</p>
+            <div class="modal-close-bottom">
+              <button id="modal-close-bottom" class="btn">Chiudi</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/news.js"></script>
+</body>
+</html>

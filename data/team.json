@@ -1,0 +1,94 @@
+{
+  "team": [
+    {
+      "name": "Nome Cognome 1",
+      "role": "Principal Investigator",
+      "photo": "images/team/person1.png",
+      "hover": "Ricercatore in X. Breve frase o area di ricerca (hover)."
+    },
+    {
+      "name": "Nome Cognome 2",
+      "role": "Ricercatore",
+      "photo": "images/team/person2.png",
+      "hover": "Esperto in Y. Breve descrizione."
+    },
+    {
+      "name": "Nome Cognome 3",
+      "role": "Data Scientist",
+      "photo": "images/team/person3.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 4",
+      "role": "Data Scientist",
+      "photo": "images/team/person4.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 5",
+      "role": "Data Scientist",
+      "photo": "images/team/person5.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 6",
+      "role": "Data Scientist",
+      "photo": "images/team/person6.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 7",
+      "role": "Data Scientist",
+      "photo": "images/team/person7.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 8",
+      "role": "Data Scientist",
+      "photo": "images/team/person8.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 9",
+      "role": "Data Scientist",
+      "photo": "images/team/person9.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 10",
+      "role": "Data Scientist",
+      "photo": "images/team/person10.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 11",
+      "role": "Data Scientist",
+      "photo": "images/team/person11.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 12",
+      "role": "Data Scientist",
+      "photo": "images/team/person12.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 13",
+      "role": "Data Scientist",
+      "photo": "images/team/person13.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 14",
+      "role": "Data Scientist",
+      "photo": "images/team/person14.png",
+      "hover": "Data scientist – modelli e analisi."
+    },
+    {
+      "name": "Nome Cognome 15",
+      "role": "Data Scientist",
+      "photo": "images/team/person15.png",
+      "hover": "Data scientist – modelli e analisi."
+    }
+  ]
+}

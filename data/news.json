@@ -1,0 +1,43 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Titolo Notizia 1",
+      "author": "A. Rossi",
+      "date": "2025-11-28",
+      "excerpt": "Estratto breve della notizia numero 1. Questo è un trafiletto riassuntivo che attira l'attenzione.",
+      "image": "images/news/news1.png",
+      "content": [
+        "Contenuto completo della notizia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus.",
+        "Paragrafo due: dettagli e approfondimenti. Aggiungi qui contenuti veri quando disponibili.",
+        "Ulteriori dettagli, note e conclusioni della notizia 1."
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Titolo Notizia 2",
+      "author": "L. Bianchi",
+      "date": "2025-11-20",
+      "excerpt": "Estratto breve della notizia numero 2. Un altro piccolo sommario...",
+      "image": "images/news/news2.png",
+      "content": [
+        "Contenuto completo della notizia 2. Lorem ipsum dolor sit amet.",
+        "Altro testo che permette di testare lo scorrimento del popup.",
+        "Conclusioni e approfondimenti finali."
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Titolo Notizia 3",
+      "author": "M. Verdi",
+      "date": "2025-10-02",
+      "excerpt": "Estratto della notizia numero 3. Placeholder testo...",
+      "image": "images/news/news3.png",
+      "content": [
+        "Contenuto completo della notizia 3. Lorem ipsum dolor sit amet.",
+        "Ulteriore paragrafo di esempio per testare la progress bar interna.",
+        "Conclusione finale dell'articolo."
+      ]
+    }
+  ]
+}

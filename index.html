@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Progetto — Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Progetto Lab Logo" class="brand-logo">
+        Progetto<span class="muted">Lab</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="news.html" class="nav-link">News</a>
+        <a href="jobs.html" class="nav-link">Open Positions</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Nome del Progetto — Soluzioni per la ricerca innovativa</h1>
+          <p class="lead">Progetto interdisciplinare finalizzato a sviluppare modelli e strumenti per ... (testo placeholder).</p>
+          <p><a class="btn primary" href="jobs.html">Candidati ora</a> <a class="btn ghost" href="news.html">Vai alle news</a></p>
+        </div>
+        <div class="hero-media">
+          <img src="images/hero.jpg" alt="hero image" />
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENTAZIONE -->
+    <section class="section container">
+      <h2>Presentazione del progetto</h2>
+      <p>Questo progetto nasce dalla collaborazione tra ricercatori di diverse discipline. L'obiettivo è sviluppare soluzioni innovative per problemi complessi nel campo X, Y e Z. (Testo placeholder — sostituisci con il testo reale).</p>
+
+      <div class="three-cols">
+        <div class="card">
+          <h3>Chi siamo</h3>
+          <p>Team di ricercatori e sviluppatori con background in ...</p>
+        </div>
+        <div class="card">
+          <h3>Cosa facciamo</h3>
+          <p>Sviluppiamo prototipi, pubblicazioni, e collaboriamo con partner industriali e accademici.</p>
+        </div>
+        <div class="card">
+          <h3>Risultati attesi</h3>
+          <p>Pubblicazioni, prototipi e trasferimento tecnologico.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTIZIA DEL GIORNO -->
+    <section class="spotlight container">
+      <div class="spotlight-left">
+        <h3>Notizia del giorno</h3>
+        <article class="mini-news">
+          <h4 id="daily-title"></h4>
+          <p id="daily-excerpt"></p>
+          <p><a id="daily-link" href="news.html" class="btn">Vai alle notizie</a></p>
+        </article>
+      </div>
+
+      <div class="spotlight-right">
+        <h3>In evidenza</h3>
+        <p>Link rapidi:</p>
+        <ul class="mini-links">
+          <li><a href="jobs.html">Posizioni aperte (scadenza prossima)</a></li>
+          <li><a href="team.html">Chi siamo</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TEAM PREVIEW CAROSELLO -->
+    <section class="container">
+      <h2>Il nostro team</h2>
+      <p>Piccolo gruppo di ricerca: <a href="team.html">vedi tutti i profili →</a></p>
+
+      <div class="team-carousel-wrapper">
+        <button class="team-nav prev">&lt;</button>
+        <div class="team-carousel" id="team-carousel"></div>
+        <button class="team-nav next">&gt;</button>
+      </div>
+    </section>
+
+    <!-- CTA / Jobs teaser with countdown -->
+    <section class="container cta-section">
+      <div class="cta-left">
+        <h2>Posizioni aperte — Scadenza candidature</h2>
+        <p>Attualmente ci sono posizioni aperte per ricercatori e sviluppatori. Scopri i dettagli e candidati.</p>
+        <a href="jobs.html" class="btn primary">Vai a Open Positions</a>
+      </div>
+      <div class="cta-right">
+        <div class="countdown" id="countdown">
+          <div class="cd-item"><span id="cd-days">00</span><small>giorni</small></div>
+          <div class="cd-item"><span id="cd-hours">00</span><small>ore</small></div>
+          <div class="cd-item"><span id="cd-mins">00</span><small>min</small></div>
+          <div class="cd-item"><span id="cd-secs">00</span><small>sec</small></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button id="scroll-top" title="Torna su">↑</button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> Progetto Lab — All rights reserved</div>
+      <div><a href="mailto:info@example.com">info@example.com</a></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
+
