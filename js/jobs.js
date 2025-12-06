@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-year], #year-op, #year-team, #year-news, #year")
     .forEach(el => el && (el.textContent = y));
 
-  /* --- helper NL -> <br> --- */
-  const nl2br = (s = "") => String(s).replace(/\n/g, "<br>");
+  /* --- helper NL -> <p> con margin per paragrafi --- */
+  const formatText = (s = "") => {
+    if (!s) return "";
+    return s.split("\n").map(line => `<p style="margin-bottom:0.8em">${line}</p>`).join("");
+  };
 
   /* ============================
      Carica jobs da JSON e monta l'accordion
@@ -22,7 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const acc = document.createElement("div");
         acc.className = "position accordion";
 
-        // markup sempre presente, ma sezioni vuote se non c'è contenuto
+        // Creiamo contenuto "Project Description" con regola objectives/expected_results
+        let projectDesc = "";
+        if (job.objectives || job.expected_results) {
+          if (job.objectives) projectDesc += `<h4>Objectives</h4>${formatText(job.objectives)}`;
+          if (job.expected_results) projectDesc += `<h4>Expected Results</h4>${formatText(job.expected_results)}`;
+        } else {
+          projectDesc += "";
+        }
+
+        // Se objectives è vuoto ma expected_results presente, mostriamo solo expected_results come unico paragrafo
+        if (!job.objectives && job.expected_results) {
+          projectDesc = formatText(job.expected_results);
+        }
+
         acc.innerHTML = `
           <button class="acc-header" type="button">
             ${job.title || "Untitled position"}
@@ -35,11 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <p class="pos-meta"><strong>Contacts:</strong> ${(job.contacts || []).filter(c => c.trim()).join("; ") || ""}</p>
 
             <h3>Project Description</h3>
+            ${projectDesc}
 
-            ${job.objectives ? `<h4>Objectives</h4><p>${nl2br(job.objectives)}</p>` : ""}
-            ${job.expected_results ? `<h4>Expected Results</h4><p>${nl2br(job.expected_results)}</p>` : ""}
-            ${job.secondments ? `<h4>Planned secondments</h4><p>${job.secondments}</p>` : ""}
-            ${job.requirements ? `<h4>Specific requirements for the project</h4><p>${nl2br(job.requirements)}</p>` : ""}
+            ${job.secondments ? `<h4>Planned secondments</h4><p>${formatText(job.secondments)}</p>` : ""}
+            ${job.requirements ? `<h4>Specific requirements for the project</h4>${formatText(job.requirements)}` : ""}
             ${job.salary ? `<h4>Gross Salary</h4><p>${job.salary}</p>` : ""}
             ${job.salary_employee ? `<h4>Gross salary to the employee</h4><p>${job.salary_employee}</p>` : ""}
 
@@ -49,7 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </p>
           </div>
         `;
-
         container.appendChild(acc);
       });
 
@@ -76,7 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
         header.addEventListener("click", () => {
           const body = header.nextElementSibling;
 
-          // chiudi altri
           container.querySelectorAll(".acc-body.open").forEach(b => {
             if (b !== body) {
               closeBody(b);
@@ -85,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
 
-          // toggle
           if (body.classList.contains("open")) {
             closeBody(body);
             header.querySelector(".acc-icon").textContent = "+";
