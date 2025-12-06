@@ -5,6 +5,28 @@
   <title>Team — Progetto</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
+<!-- TEAM MODAL -->
+<div id="team-modal" class="team-modal" aria-hidden="true">
+  <div class="modal-overlay" id="team-modal-overlay"></div>
+  <div class="team-modal-box">
+    <button class="modal-close" id="team-modal-close" aria-label="Chiudi">×</button>
+    <div class="modal-inner">
+      <article class="modal-content">
+        <div class="modal-image">
+          <img id="team-modal-image" src="" alt="Team Member">
+        </div>
+        <h2 id="team-modal-title">Nome Cognome</h2>
+        <div class="modal-project" id="team-modal-project">Project</div>
+        <div class="modal-article" id="team-modal-description" tabindex="0"></div>
+        <div class="modal-close-bottom" style="margin-top:16px;text-align:center;">
+          <button class="btn" id="team-modal-close-bottom">Chiudi</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
 <body>
   <header class="site-header">
     <div class="container header-inner">

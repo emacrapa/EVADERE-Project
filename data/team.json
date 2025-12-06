@@ -1,94 +1,139 @@
 {
   "team": [
     {
-      "name": "Nome Cognome 1",
-      "role": "Principal Investigator",
+      "name": "Researcher Name 1",
+      "Project": "DC1- Design and synthesis of small molecules modulating human innate immunity as innovative Vaccine Adjuvants",
       "photo": "images/team/person1.png",
-      "hover": "Ricercatore in X. Breve frase o area di ricerca (hover)."
+      "short_description": "Short description",
+      "description": "Long description \ntest \ntest \ntest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test \ntest \ntest \ntest \ntest",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC1"
     },
     {
-      "name": "Nome Cognome 2",
-      "role": "Ricercatore",
+      "name": "Researcher Name 2",
+      "Project": "DC2- Optimisation of vaccines against Klebsiella pneumoniae and Pseudomonas aeruginosa",
       "photo": "images/team/person2.png",
-      "hover": "Esperto in Y. Breve descrizione."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC2"
     },
     {
-      "name": "Nome Cognome 3",
-      "role": "Data Scientist",
+      "name": "Researcher Name 3",
+      "Project": "DC3- Structural Vaccinology And Antigen Design",
       "photo": "images/team/person3.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC3"
     },
     {
-      "name": "Nome Cognome 4",
-      "role": "Data Scientist",
+      "name": "Researcher Name 4",
+      "Project": "DC4- Utilising Adjuvants As A Tool To Define Protective Immunity",
       "photo": "images/team/person4.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC4"
     },
     {
-      "name": "Nome Cognome 5",
-      "role": "Data Scientist",
+      "name": "Researcher Name 5",
+      "Project": "DC5- Identification Of Mucosal Correlates Of Protection",
       "photo": "images/team/person5.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC5"
     },
     {
-      "name": "Nome Cognome 6",
-      "role": "Data Scientist",
+      "name": "Researcher Name 6",
+      "Project": "DC6- Lipoglycan-Protein Conjugated And Self Adjuvanted Vaccine Candidates For TB",
       "photo": "images/team/person6.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC6"
     },
     {
-      "name": "Nome Cognome 7",
-      "role": "Data Scientist",
+      "name": "Researcher Name 7",
+      "Project": "DC7- Identification Of Enterococcal And Staphylococcal Cross-Reactive Antigens Through Bioinformatics And Structural Chemistry",
       "photo": "images/team/person7.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC7"
     },
     {
-      "name": "Nome Cognome 8",
-      "role": "Data Scientist",
+      "name": "Researcher Name 8",
+      "Project": "DC8 - Vaccine Delivery Systems for Lipopeptide-Based Antigens",
       "photo": "images/team/person8.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC8"
     },
     {
-      "name": "Nome Cognome 9",
-      "role": "Data Scientist",
+      "name": "Researcher Name 9",
+      "Project": "DC9- Development Of 2nd Generation Sustainable Vaccine Adjuvant Systems Combining Novel TLR Ligands and Saponins Formulated In Lipid-Based Delivery Systems",
       "photo": "images/team/person9.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC9"
     },
     {
-      "name": "Nome Cognome 10",
-      "role": "Data Scientist",
+      "name": "Researcher Name 10",
+      "Project": "DC10-Development Of Sustained Release Vaccine-Loaded Dissolvable Microneedle Patches (DMN) To Protect Against ESKAPE Pathogens",
       "photo": "images/team/person10.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC10"
     },
     {
-      "name": "Nome Cognome 11",
-      "role": "Data Scientist",
+      "name": "Researcher Name 11",
+      "Project": "DC11- Development Of Synthetic Glycan-Based Conjugate Vaccine Candidates Against Selected Eskape Pathogens",
       "photo": "images/team/person11.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC11"
     },
     {
-      "name": "Nome Cognome 12",
-      "role": "Data Scientist",
+      "name": "Researcher Name 12",
+      "Project": "DC12- Immunological Analysis Of Functional Response Induced By Different Antigens, Adjuvants, And Delivery Systems",
       "photo": "images/team/person12.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC12"
     },
     {
-      "name": "Nome Cognome 13",
-      "role": "Data Scientist",
+      "name": "Researcher Name 13",
+      "Project": "DC13- Development Of Cyclodextrin-Based Library For Enhanced Peptide/Protein Delivery",
       "photo": "images/team/person13.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC13"
     },
     {
-      "name": "Nome Cognome 14",
-      "role": "Data Scientist",
+      "name": "Researcher Name 14",
+      "Project": "DC14- Formulation Of Optimised Adjuvants And Biological Screening",
       "photo": "images/team/person14.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC14"
     },
     {
-      "name": "Nome Cognome 15",
-      "role": "Data Scientist",
+      "name": "Researcher Name 15",
+      "Project": "DC15- AI methods in drug design and data analysis",
       "photo": "images/team/person15.png",
-      "hover": "Data scientist – modelli e analisi."
+      "short_description": "Short description",
+      "description": "Long description",
+      "linkedin": "https://www.linkedin.com/in/emanuele-crapanzano-2603a8265/",
+      "job_id": "DC15"
     }
   ]
 }

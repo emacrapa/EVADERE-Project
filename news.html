@@ -70,31 +70,29 @@
 </footer>
 
   <!-- MODAL template -->
-  <div id="news-modal" class="news-modal hidden" aria-hidden="true">
-    <div class="modal-overlay" id="modal-overlay"></div>
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" id="modal-close" aria-label="Chiudi">×</button>
-      <div class="modal-inner">
-        <aside class="modal-progress" id="modal-progress">
-          <div class="progress-bar" id="progress-bar"></div>
-        </aside>
-
-        <article class="modal-content" id="modal-content">
-          <h2 id="modal-title">Titolo completo</h2>
-          <div class="meta" id="modal-meta"><span class="date">2025-11-28</span> • <span class="author">Autore</span></div>
-          <div class="modal-article" id="modal-article" tabindex="0">
-            <!-- testo lungo qui -->
-            <p>Qui il contenuto completo della notizia. Lorem ipsum dolor sit amet, consectetur...</p>
-            <p>(Aggiungi più paragrafi per testare lo scroll interno e la progress bar.)</p>
-            <p>Fine dell'articolo.</p>
-            <div class="modal-close-bottom">
-              <button id="modal-close-bottom" class="btn">Chiudi</button>
-            </div>
-          </div>
-        </article>
-      </div>
+<div id="news-modal" class="news-modal hidden" aria-hidden="true">
+  <div class="modal-overlay" id="modal-overlay"></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Chiudi">×</button>
+    <div class="modal-inner">
+      
+      <article class="modal-content" id="modal-content">
+        <div class="modal-image">
+          <img id="modal-image" src="" alt="News Image">
+        </div>
+        <h2 id="modal-title">Titolo completo</h2>
+        <div class="meta" id="modal-meta"><span class="date">2025-11-28</span> • <span class="author">Autore</span></div>
+        <div class="modal-article" id="modal-article" tabindex="0">
+          <!-- testo lungo qui -->
+          <p>Qui il contenuto completo della notizia...</p>
+        </div>
+        <div class="modal-close-bottom">
+          <button id="modal-close-bottom" class="btn">Close</button>
+        </div>
+      </article> 
     </div>
   </div>
+</div>
 
   <script src="js/main.js"></script>
   <script src="js/news.js"></script>

@@ -43,34 +43,35 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 .tp-card{background:#fff;padding:8px;border-radius:8px;text-align:center;border:1px solid #eee}
 .tp-card img{width:100%;height:110px;object-fit:cover;border-radius:6px;margin-bottom:8px}
 .tp-card h4{font-size:0.95rem;margin-bottom:4px}
-
 /* Full team grid 3x5 */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px}
-.member{
-  background:white;
-  padding:14px;
-  border-radius:8px;
-  text-align:center;
-  border:1px solid #eee;
-  overflow:hidden;
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-
-.member:hover{
-  transform:translateY(-4px);
-  box-shadow:0 10px 22px rgba(0,0,0,0.08);
-  border-color:#d0e2ff;
-}
+.member {position: relative;background:white;padding:14px;border-radius:8px;text-align:center;border:1px solid #eee;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;}
+.member:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,0.08);border-color:#d0e2ff;}
 .member h4{margin-top:12px;margin-bottom:6px}
 .member small{color:#666}
+/* Team Modal */
+/* TEAM MODAL */
+/* TEAM MODAL */
+.team-modal{display:none;position:fixed;inset:0;z-index:1000}
+.team-modal.active{display:flex;align-items:center;justify-content:center}
+.team-modal .modal-overlay{position:absolute;inset:0;background:rgba(10,20,30,0.55)}
+.team-modal-box {position:relative;background:#fff;border-radius:10px;width:470px;height:750px;display:flex;flex-direction:column;overflow:hidden;padding-top:12px;}
+.team-modal .modal-close{position:absolute;top:6px;right:8px;font-size:26px;background:transparent;border:none;cursor:pointer;color:#333;z-index:5}
+.team-modal .modal-image{width:260px;height:260px;border-radius:50%;overflow:hidden;margin:12px auto 8px;flex-shrink:0}
+.team-modal .modal-image img{width:100%;height:100%;object-fit:cover;display:block}
+.team-modal h2{text-align:center;margin:6px 0 2px;font-size:1.2rem}
+.team-modal .modal-project{text-align:center;color:#666;font-size:0.9rem;margin-bottom:8px}
+.team-modal .modal-article{overflow-y:auto;padding:0 12px;margin-bottom:8px;flex:1}
+/* LinkedIn button in basso a destra della card */
+.member .linkedin-btn {position: absolute;bottom: 8px;right: 8px;width:32px;height:32px;border-radius:50%;overflow:hidden;}
+.member .linkedin-btn img {width:100%;height:100%;object-fit:cover;}
+
+
 
 /* photo + hover overlay */
 .member .photo{position:relative;border-radius:8px;overflow:hidden;height:230px}
 .member .photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
-.member .photo .overlay{
-  position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,58,107,0.85),rgba(4,58,107,0.2));
-  color:#fff;padding:16px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:all .25s ease;text-align:center
-}
+.member .photo .overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,58,107,0.85),rgba(4,58,107,0.2));color:#fff;padding:16px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:all .25s ease;text-align:center}
 .member:hover .photo img{transform:scale(1.07)}
 .member:hover .photo .overlay{opacity:1;transform:translateY(0)}
 
@@ -80,46 +81,16 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 .news-card:hover{transform:scale(1.01);box-shadow:0 8px 24px rgba(0,0,0,0.06)}
 .news-title{font-size:1.25rem;margin-bottom:8px}
 .news-card .meta{color:#666;font-size:0.9rem;margin-bottom:10px}
-.share-btn{
-  width:28px;
-  height:28px;
-  border:none;
-  background:#e9f2ff;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  position:absolute;
-  bottom:12px;
-  right:12px;
-  font-size:16px;
-}
-.news-card{
-  position:relative;
-}
-.news-cover {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  border-radius: 10px 10px 0 0;
-}
-.news-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform .3s ease;
-}
-.news-card:hover .news-cover img {
-  transform: scale(1.05);
-}
+.share-btn{width:28px;height:28px;border:none;background:#e9f2ff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;position:absolute;bottom:12px;right:12px;font-size:16px;}
+.news-card{position:relative;}
+.news-cover {width: 100%;height: 220px;overflow: hidden;border-radius: 10px 10px 0 0;}
+.news-cover img {width: 100%;height: 100%;object-fit: cover;transition: transform .3s ease;}
+.news-card:hover .news-cover img {transform: scale(1.05);}
 
-/* ========== MODAL ========== */
+/* ========== NEWS MODAL ========== */
 .news-modal.hidden{display:none}
 .news-modal .modal-overlay{position:fixed;inset:0;background:rgba(10,20,30,0.55)}
-.news-modal .modal-box{
-  position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1000px,94%);height:min(80vh,900px);z-index:1000;display:flex;align-items:center;justify-content:center;
-}
+.news-modal .modal-box{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1000px,94%);height:min(80vh,900px);z-index:1000;display:flex;align-items:center;justify-content:center;}
 .modal-inner{display:flex;width:100%;height:100%;background:white;border-radius:10px;overflow:hidden;position:relative}
 .modal-close{position:absolute;right:10px;top:6px;border:none;background:transparent;font-size:26px;cursor:pointer;color:#333;z-index:5}
 .modal-progress{width:40px;background:#f6f9fc;display:flex;align-items:flex-start;justify-content:center;padding:8px}
@@ -128,6 +99,9 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 .modal-article{overflow:auto;padding-right:12px;height:100%}
 .modal-article p{margin-bottom:12px}
 .modal-close-bottom{margin-top:18px;text-align:center}
+/* Modal banner image */
+.modal-image {width: 100%;height: 280px;overflow: hidden;border-radius: 8px 8px 0 0;margin-bottom: 16px;}
+.modal-image img {width: 100%;height: 100%;object-fit: cover;display: block;}
 
 /* ========== POSITIONS & COUNTDOWN ========== */
 .cta-section{display:flex;gap:18px;align-items:center;justify-content:space-between}
