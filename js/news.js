@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
           <p class="excerpt">${item.excerpt}</p>
 
           <p class="news-actions">
-            <a class="btn primary" data-open="${item.id}" href="#0">Approfondisci</a>
+            <a class="btn primary" data-open="${item.id}" href="#0">Learn more</a>
 
             <button class="share-btn" data-share="${item.id}">
-              <img src="images/share-icon.png" alt="Condividi">
+              <img src="images/share-icon.png" alt="Share">
             </button>
           </p>
         </div>

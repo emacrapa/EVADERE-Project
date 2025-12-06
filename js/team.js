@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <a class="linkedin-btn" href="${member.linkedin}" target="_blank">
             <img src="images/linkedin.png" alt="LinkedIn">
           </a>
+          <a class="btn primary project-btn" href="jobs.html?job=${member.job_id || ''}">Project Description</a>
         `;
         container.appendChild(el);
       });

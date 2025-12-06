@@ -20,19 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const acc = document.createElement("div");
         acc.className = "position accordion";
 
-        // Creiamo contenuto "Project Description" con regola objectives/expected_results
         let projectDesc = "";
         if (job.objectives || job.expected_results) {
           if (job.objectives) projectDesc += `<h4>Objectives</h4>${formatText(job.objectives)}`;
           if (job.expected_results) projectDesc += `<h4>Expected Results</h4>${formatText(job.expected_results)}`;
-        } else {
-          projectDesc += "";
-        }
-
-        // Se objectives è vuoto ma expected_results presente, mostriamo solo expected_results come unico paragrafo
-        if (!job.objectives && job.expected_results) {
-          projectDesc = formatText(job.expected_results);
-        }
+        } else projectDesc = "";
+        if (!job.objectives && job.expected_results) projectDesc = formatText(job.expected_results);
 
         acc.innerHTML = `
           <button class="acc-header" type="button">
@@ -63,51 +56,138 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       /* ============================
-         Funzioni accordion robuste
+         Funzioni accordion con animazione JS
          ============================ */
       const headers = container.querySelectorAll(".acc-header");
+      const headerFixed = document.querySelector(".site-header");
+      const headerHeight = headerFixed ? headerFixed.offsetHeight : 0;
+      const marginTop = 10;
 
-      function measureOpenHeight(body) {
+      function animateOpen(body, acc) {
         body.classList.add("open");
-        body.style.maxHeight = "none";
-        const h = body.scrollHeight || Array.from(body.children).reduce((sum, ch) => sum + (ch.getBoundingClientRect().height || 0), 0);
-        const BUFFER = 40;
-        body.style.maxHeight = Math.ceil(h + BUFFER) + "px";
-        return h;
+        const header = body.previousElementSibling;
+        if (header) header.querySelector(".acc-icon").textContent = "−";
+
+        const startHeight = 0;
+        const endHeight = body.scrollHeight;
+        body.style.height = startHeight + "px";
+
+        let startTime = null;
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const elapsed = timestamp - startTime;
+          const duration = 300;
+          const progress = Math.min(elapsed / duration, 1);
+          body.style.height = (startHeight + (endHeight - startHeight) * progress) + "px";
+
+          // scroll in tempo reale
+          const rect = acc.getBoundingClientRect();
+          const absoluteTop = rect.top + window.pageYOffset;
+          if (rect.top < headerHeight + marginTop) {
+            window.scrollTo({ top: absoluteTop - headerHeight - marginTop });
+          }
+
+          if (progress < 1) requestAnimationFrame(step);
+          else body.style.height = "auto";
+        }
+        requestAnimationFrame(step);
       }
 
-      function closeBody(body) {
-        body.style.maxHeight = null;
-        body.classList.remove("open");
+      function animateClose(body) {
+        const header = body.previousElementSibling;
+        if (header) header.querySelector(".acc-icon").textContent = "+";
+
+        const startHeight = body.scrollHeight;
+        const endHeight = 0;
+        body.style.height = startHeight + "px";
+
+        let startTime = null;
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const elapsed = timestamp - startTime;
+          const duration = 300;
+          const progress = Math.min(elapsed / duration, 1);
+          body.style.height = (startHeight - (startHeight - endHeight) * progress) + "px";
+
+          if (progress < 1) requestAnimationFrame(step);
+          else {
+            body.classList.remove("open");
+            body.style.height = "0px";
+          }
+        }
+        requestAnimationFrame(step);
       }
 
       headers.forEach(header => {
         header.addEventListener("click", () => {
           const body = header.nextElementSibling;
+          const acc = header.parentElement;
 
+          // chiudi altre aperte
           container.querySelectorAll(".acc-body.open").forEach(b => {
-            if (b !== body) {
-              closeBody(b);
-              const ic = b.previousElementSibling.querySelector(".acc-icon");
-              if (ic) ic.textContent = "+";
-            }
+            if (b !== body) animateClose(b);
           });
 
           if (body.classList.contains("open")) {
-            closeBody(body);
-            header.querySelector(".acc-icon").textContent = "+";
+            animateClose(body);
           } else {
-            measureOpenHeight(body);
-            header.querySelector(".acc-icon").textContent = "−";
+            animateOpen(body, acc);
           }
         });
       });
 
       window.addEventListener("resize", () => {
-        container.querySelectorAll(".acc-body.open").forEach(b => {
-          b.style.maxHeight = Math.ceil(b.scrollHeight + 40) + "px";
-        });
+        container.querySelectorAll(".acc-body.open").forEach(b => b.style.height = "auto");
       });
+
+      /* ============================
+         Apri job specifico via query string
+         ============================ */
+      function getQueryParam(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name);
+      }
+
+      // apertura istantanea via query
+function openJobById(jobId) {
+  if (!jobId) return;
+  const acc = Array.from(container.querySelectorAll(".position")).find(a => {
+    const header = a.querySelector(".acc-header");
+    return header && header.textContent.includes(jobId);
+  });
+  if (!acc) return;
+
+  const header = acc.querySelector(".acc-header");
+  const body = acc.querySelector(".acc-body");
+
+  // chiudi tutte le altre
+  container.querySelectorAll(".acc-body.open").forEach(b => {
+    b.classList.remove("open");
+    b.style.height = "0px";
+    const ic = b.previousElementSibling && b.previousElementSibling.querySelector(".acc-icon");
+    if (ic) ic.textContent = "+";
+  });
+
+  // apertura istantanea (senza animazione)
+  body.classList.add("open");
+  body.style.height = body.scrollHeight + "px";
+  header.querySelector(".acc-icon").textContent = "−";
+
+  // subito dopo forza auto per gestire resize futuri
+  setTimeout(() => body.style.height = "auto", 0);
+
+  // scroll immediato
+  const headerFixed = document.querySelector(".site-header");
+  const headerHeight = headerFixed ? headerFixed.offsetHeight : 0;
+  const marginTop = 10;
+  const rect = acc.getBoundingClientRect();
+  const absoluteTop = rect.top + window.pageYOffset;
+  window.scrollTo({ top: Math.max(0, absoluteTop - headerHeight - marginTop) });
+}
+
+
+
+      openJobById(getQueryParam("job"));
 
     })
     .catch(err => console.error("Errore caricamento jobs:", err));

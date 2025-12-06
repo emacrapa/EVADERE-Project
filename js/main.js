@@ -34,6 +34,13 @@ scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".site-header");
+  if(header){
+    document.body.style.paddingTop = header.offsetHeight + "px";
+  }
+});
+
 // --- COUNTDOWN GENERICO ---
 function initCountdown(targetDateISO, ids){
   const target = new Date(targetDateISO).getTime();

@@ -9,13 +9,14 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 .header-inner{display:flex;align-items:center;justify-content:space-between}
 
 /* ========== HEADER ========== */
-.site-header{background:#086394;color:#fff;position:sticky;top:0;z-index:50}
+.site-header {background:#086394;color:#fff;position:fixed;top:0;left:0;width:100%;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1);}
+body {margin:0;padding-top: calc( var(--header-height, 80px) );}
 .brand{font-weight:700;color:#fff;text-decoration:none;font-size:1.2rem;}
-.brand img {margin-right: 10px;}
-.brand .muted{font-weight:400;color:#bfe0ff;margin-left:16px}
-.main-nav{display:flex;gap:14px}
-.main-nav .nav-link{color:#e6f4ff;text-decoration:none;padding:18px 8px;display:inline-block}
-.main-nav .nav-link.active{border-bottom:3px solid rgba(255,255,255,0.15)}
+.brand img{margin-right:10px;}
+.brand .muted{font-weight:400;color:#bfe0ff;margin-left:16px;}
+.main-nav{display:flex;gap:14px;}
+.main-nav .nav-link{color:#e6f4ff;text-decoration:none;padding:18px 8px;display:inline-block;}
+.main-nav .nav-link.active{border-bottom:3px solid rgba(255,255,255,.15);}
 
 /* ========== HERO ========== */
 .hero{background:linear-gradient(180deg,#f2f6fb,white);padding:48px 0}
@@ -45,13 +46,14 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 .tp-card h4{font-size:0.95rem;margin-bottom:4px}
 /* Full team grid 3x5 */
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px}
-.member {position: relative;background:white;padding:14px;border-radius:8px;text-align:center;border:1px solid #eee;overflow:hidden;transition:transform .25s ease, box-shadow .25s ease;}
-.member:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,0.08);border-color:#d0e2ff;}
+.member{position:relative;background:#fff;padding:14px;border-radius:8px;text-align:center;border:1px solid #eee;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+.member:hover{transform:translateY(-4px);box-shadow:0 10px 22px rgba(0,0,0,.08);border-color:#d0e2ff}
 .member h4{margin-top:12px;margin-bottom:6px}
-.member small{color:#666}
+.member small{color:#666;margin-bottom:12px}
+/* Project Description button */
+.member .project-btn{margin-top:auto;padding:6px 12px;border-radius:6px;background:#086394;color:#fff;text-decoration:none;font-size:.9rem;transition:background-color .25s ease;width:auto;align-self:center;white-space:nowrap}
+.member .project-btn:hover{background:#064874}
 /* Team Modal */
-/* TEAM MODAL */
-/* TEAM MODAL */
 .team-modal{display:none;position:fixed;inset:0;z-index:1000}
 .team-modal.active{display:flex;align-items:center;justify-content:center}
 .team-modal .modal-overlay{position:absolute;inset:0;background:rgba(10,20,30,0.55)}
@@ -63,9 +65,8 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 .team-modal .modal-project{text-align:center;color:#666;font-size:0.9rem;margin-bottom:8px}
 .team-modal .modal-article{overflow-y:auto;padding:0 12px;margin-bottom:8px;flex:1}
 /* LinkedIn button in basso a destra della card */
-.member .linkedin-btn {position: absolute;bottom: 8px;right: 8px;width:32px;height:32px;border-radius:50%;overflow:hidden;}
+.member .linkedin-btn {position: absolute;bottom: 0px;right: 0px;width:64px;height:64px;border-radius:50%;overflow:hidden;}
 .member .linkedin-btn img {width:100%;height:100%;object-fit:cover;}
-
 
 
 /* photo + hover overlay */
@@ -86,6 +87,9 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 .news-cover {width: 100%;height: 220px;overflow: hidden;border-radius: 10px 10px 0 0;}
 .news-cover img {width: 100%;height: 100%;object-fit: cover;transition: transform .3s ease;}
 .news-card:hover .news-cover img {transform: scale(1.05);}
+.news-actions {display: flex;align-items: center;justify-content: space-between;margin-top: 14px;}
+.share-btn img {width: 28px;height: 28px;display: block;transition: transform .2s ease, filter .2s ease;}
+.share-btn:hover img {transform: scale(1.1);filter: brightness(1.1);}
 
 /* ========== NEWS MODAL ========== */
 .news-modal.hidden{display:none}
@@ -178,127 +182,24 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 }
 
 /* ========== ACCORDION POSITIONS ========== */
-.accordion{
-  border:1px solid #ddd;
-  border-radius:8px;
-  overflow:hidden;
-  background:#fff;
-}
-
-.acc-header{
-  width:100%;
-  background:#f6f9ff;
-  border:none;
-  padding:16px;
-  text-align:left;
-  font-size:1.2rem;
-  cursor:pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.acc-header:hover{
-  background:#ebf2ff;
-}
-
-.acc-icon{
-  font-weight:bold;
-  font-size:1.4rem;
-}
+.accordion{border:1px solid #ddd;border-radius:8px;overflow:hidden;background:#fff;}
+.acc-header{width:100%;background:#f6f9ff;border:none;padding:16px;text-align:left;font-size:1.2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+.acc-header:hover{background:#ebf2ff;}
+.acc-icon{font-weight:bold;font-size:1.4rem;}
 
 /* ACCORDION */
-.acc-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .32s ease;
-  padding: 0 16px;
-  box-sizing: border-box;
-}
-
-.acc-body.open {
-  padding: 16px;
-}
-
-.acc-body ul {
-  padding-left: 24px !important;
-  margin-left: 8px;
-}
-
-.acc-body li {
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-.news-actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 14px;
-}
-.share-btn img {
-  width: 28px;
-  height: 28px;
-  display: block;
-  transition: transform .2s ease, filter .2s ease;
-}
-.share-btn:hover img {
-  transform: scale(1.1);
-  filter: brightness(1.1);
-}
+.acc-body {max-height: none;overflow: hidden;padding: 0 16px;box-sizing: border-box;height: 0;}
+.acc-body.open {padding: 16px;}
+.acc-body ul {padding-left: 24px !important;margin-left: 8px;}
+.acc-body li {margin-bottom: 6px;line-height: 1.4;}
 
 /* Carosello Team */
-.team-carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.team-carousel {
-  display: flex;
-  overflow: hidden;
-  gap: 16px;
-  scroll-behavior: smooth;
-  flex: 1;
-}
-
-.member {
-  flex: 0 0 160px;
-  min-width: 10px;
-  background:white;
-  padding:12px;
-  border-radius:8px;
-  text-align:center;
-  border:1px solid #eee;
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.member img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 8px;
-}
-
-.team-nav {
-  background:#0051a8;
-  color:white;
-  border:none;
-  border-radius:6px;
-  width:32px;
-  height:32px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.brand-logo {
-  height: 128px;
-  width: auto;
-  vertical-align: middle;
-  margin-right: -32px;
-}
+.team-carousel-wrapper {position: relative;display: flex;align-items: center;gap: 8px;}
+.team-carousel {display: flex;overflow: hidden;gap: 16px;scroll-behavior: smooth;flex: 1;}
+.member {flex: 0 0 160px;min-width: 10px;background:white;padding:12px;border-radius:8px;text-align:center;border:1px solid #eee;transition: transform .25s ease, box-shadow .25s ease;}
+.member img {width: 100%;height: 100px;object-fit: cover;border-radius: 6px;margin-bottom: 8px;}
+.team-nav {background:#0051a8;color:white;border:none;border-radius:6px;width:32px;height:32px;cursor:pointer;font-weight:bold;}
+.brand-logo {height: 128px;width: auto;vertical-align: middle;margin-right: -32px;}
 
 /* ========== SCROLL TO TOP ========== */
 #scroll-top{position:fixed;bottom:80px;right:calc((100% - 1200px)/2);background:#0051a8;color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:100;box-shadow:0 4px 10px rgba(0,0,0,.2);transition:opacity .3s ease,transform .3s ease}
@@ -306,3 +207,25 @@ body{font-family:Inter,Arial,Helvetica,sans-serif;color:#222;background:#fafafa;
 #scroll-top:hover{background:#003f7f;transform:scale(1.1)}
 @media(max-width:900px){#scroll-top{right:20px}}
 
+/* ========== NETWORK LIST ========== */
+/* NETWORK LIST */
+.network-list {display:flex;flex-direction:column;gap:20px;margin-top:20px}
+/* Scheda principale */
+.network-card {height:140px;border-radius:10px;overflow:hidden;position:relative;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease}
+.network-card:hover {transform:scale(1.01);box-shadow:0 10px 28px rgba(0,0,0,0.08)}
+.network-card-inner {display: flex;height: 100%;position: relative;align-items: stretch;border-radius: 10px;overflow: hidden;z-index: 2;}
+.network-banner {position: absolute;top: 0;right: 0;height: 100%;width: 66.66%;background-size: cover;background-position: right center;background-repeat: no-repeat;z-index: 0;pointer-events: none;}
+.network-banner::after {content: "";position: absolute;top: 0;left: 0;height: 100%;width: 100%;background: linear-gradient(to left, rgba(250,250,250,0) 0%, #fafafa 100%);z-index: 1;pointer-events: none;outline: none;-webkit-tap-highlight-color: transparent;}
+/* Sezione immagine quadrata a sinistra */
+.network-left {flex:0 0 120px;display:flex;justify-content:center;align-items:center;padding:8px;z-index:2;background:rgba(255,255,255,0.8)}
+.network-left .network-icon {width:100%;height:100%;object-fit:contain;border-radius:6px}
+/* Testi centrali */
+.network-center {flex:1;padding:10px 16px;display:flex;flex-direction:column;justify-content:center;z-index:2}
+.network-name {font-size:1.3rem;font-weight:700;margin:0 0 8px 0}
+.network-contact {font-size:0.95rem;color:#333;margin:0}
+.network-contact a {color:#0051a8;text-decoration:underline}
+.network-contact a:hover {color:#003f7f}
+/* Banda verticale blu solida cliccabile a destra */
+.network-link {position:absolute;top:0;right:0;width:50px;height:100%;display:flex;justify-content:center;align-items:center;background:#0051a8;color:#fff;text-decoration:none;font-size:1.6rem;font-weight:bold;z-index:3;transition:background .3s ease;}
+.network-link:hover {background:#003f7f}
+.network-link-arrow {pointer-events:none}

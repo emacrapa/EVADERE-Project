@@ -1,0 +1,116 @@
+{
+  "network": [
+    {
+      "name": "University of Milano-Bicocca (UNIMIB, Milano, Italy)",
+      "icon": "images/network/icon/icon1.png",
+      "contact": "Prof. Francesco Peri",
+      "contact_link": "https://en.unimib.it/francesco-peri",
+      "website": "https://en.unimib.it/",
+      "image": "images/network/banner/banner1.png"
+    },
+    {
+      "name": "University College Dublin (UCD, Dublin, Ireland)",
+      "icon": "images/network/icon/icon2.png",
+      "contact": "Prof. Siobhán McClean",
+      "contact_link": "https://people.ucd.ie/siobhan.mcclean",
+      "website": "https://www.ucd.ie/",
+      "image": "images/network/banner/banner2.png"
+    },
+    {
+      "name": "National Research Council, (CNR-IBB, Naples, Italy)",
+      "icon": "images/network/icon/icon3.png",
+      "contact": "Dr. Rita Berisio",
+      "contact_link": "https://www.ibb.cnr.it/?command=viewu&id=389",
+      "website": "https://www.ibb.cnr.it/",
+      "image": "images/network/banner/banner3.png"
+    },
+    {
+      "name": "Queens University Belfast (QUB, Belfast, UK)",
+      "icon": "images/network/icon/icon4.png",
+      "contact": "Prof. Miguel Valvano",
+      "contact_link": "https://pure.qub.ac.uk/en/persons/miguel-a-valvano/",
+      "website": "https://pure.qub.ac.uk/",
+      "image": "images/network/banner/banner4.png"
+    },
+    {
+      "name": "CIC bioGUNE (Bilbao, Spain)",
+      "icon": "images/network/icon/icon5.png",
+      "contact": "Prof. Juan Anguita",
+      "contact_link": "https://www.cicbiogune.es/people/janguita",
+      "website": "https://www.cicbiogune.es/",
+      "image": "images/network/banner/banner5.png"
+    },
+    {
+      "name": "St. George’s University of London (SGUL, London, UK)",
+      "icon": "images/network/icon/icon6.png",
+      "contact": "Dr. Rajko Reljic",
+      "contact_link": "ERROR 404",
+      "website": "https://www.citystgeorges.ac.uk/",
+      "image": "images/network/banner/banner6.png"
+    },
+    {
+      "name": "Ludwig Maximilian University of Munich (LMU, Munich, Germany)",
+      "icon": "images/network/icon/icon7.png",
+      "contact": "Prof. Johannes Huebner",
+      "contact_link": "ERROR 404",
+      "website": "https://www.lmu.de/",
+      "image": "images/network/banner/banner7.png"
+    },
+    {
+      "name": "HUN-REN Research Centre for Natural Sciences (Budapest, Hungary)",
+      "icon": "images/network/icon/icon8.png",
+      "contact": "Dr. Kata Horváti",
+      "contact_link": "https://peptid.chem.elte.hu/horvati_eng.html",
+      "website": "https://hun-ren.hu/",
+      "image": "images/network/banner/banner8.png"
+    },
+    {
+      "name": "Imperial College London (London, UK)",
+      "icon": "images/network/icon/icon9.png",
+      "contact": "Prof. Mariagrazia Pizza",
+      "contact_link": "https://profiles.imperial.ac.uk/m.pizza",
+      "website": "https://www.imperial.ac.uk/",
+      "image": "images/network/banner/banner9.png"
+    },
+    {
+      "name": "CRODA Denmark (Copenhagen, Denmark)",
+      "icon": "images/network/icon/icon10.png",
+      "contact": "Dr. Rasmus Münter",
+      "contact_link": "https://www.crodapharma.com/en-gb/news-and-blog/lipid-leaders-rasmus",
+      "website": "https://www.crodapharma.com/",
+      "image": "images/network/banner/banner10.png"
+    },
+    {
+      "name": "University College Cork (Cork, Ireland)",
+      "icon": "images/network/icon/icon11.png",
+      "contact": "Prof. Anne Moore",
+      "contact_link": "https://www.ucc.ie/en/biochemistry/people/academic/amoore/",
+      "website": "https://www.ucc.ie/",
+      "image": "images/network/banner/banner11.png"
+    },
+    {
+      "name": "Institut Pasteur, Paris (Paris, France)",
+      "icon": "images/network/icon/icon12.png",
+      "contact": "Dr. Laurence Mulard",
+      "contact_link": "https://research.pasteur.fr/en/member/laurence-mulard/",
+      "website": "https://www.pasteur.fr/",
+      "image": "images/network/banner/banner12.png"
+    },
+    {
+      "name": "Cyclolab (Budapest, Hungary)",
+      "icon": "images/network/icon/icon13.png",
+      "contact": "Dr. Istvan Puskas",
+      "contact_link": "https://www.researchgate.net/profile/Istvan-Puskas",
+      "website": "https://cyclolab.hu/",
+      "image": "images/network/banner/banner13.png"
+    },
+    {
+      "name": "Babes-Bolyai University (Cluj, Romania)",
+      "icon": "images/network/icon/icon14.png",
+      "contact": "Prof. Vlad Cojocaru",
+      "contact_link": "https://starubb.institute.ubbcluj.ro/en/member/cojocaru-vlad-3/",
+      "website": "https://www.ubbcluj.ro/en/",
+      "image": "images/network/banner/banner14.png"
+    }
+  ]
+}
