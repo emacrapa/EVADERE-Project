@@ -10,7 +10,7 @@
     <div class="container header-inner">
       <a class="brand" href="index.html">
         <img src="images/logo.png" alt="Progetto Lab Logo" class="brand-logo">
-        Progetto<span class="muted">Lab</span>
+        EVADERE<span class="muted">Fighting Antimicrobial Resistance</span>
       </a>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
@@ -22,28 +22,94 @@
     </div>
   </header>
 
-  <main class="container section">
-    <h1>Contatti</h1>
-    <p>Per informazioni generali: <a href="mailto:info@example.com">info@example.com</a></p>
+  <main class="container section contact-section">
+  <h1>Contact us</h1>
 
-    <form class="contact-form" onsubmit="event.preventDefault(); alert('Grazie! Il modulo è un placeholder.');">
-      <label>Nome</label>
-      <input type="text" name="name" required>
-      <label>Email</label>
-      <input type="email" name="email" required>
-      <label>Messaggio</label>
-      <textarea name="message" rows="6" required></textarea>
-      <button class="btn primary" type="submit">Invia</button>
-    </form>
-  </main>
+  <div class="contact-grid">
+
+    <!-- Colonna sinistra: elenco contatti -->
+    <div class="contact-list">
+      <h3>Contacts</h3>
+      
+      <div class="contact-entry">
+        <div class="contact-name">Coordinator</div>
+        <div><a href="#" data-email="coordinator@evadere.eu">coordinator@evadere.eu</a></div>
+      </div>
+
+      <div class="contact-entry">
+        <div class="contact-name">Researcher 1</div>
+        <div><a href="#" data-email="researcher1@evadere.eu">researcher1@evadere.eu</a></div>
+      </div>
+
+      <div class="contact-entry">
+        <div class="contact-name">Researcher 2</div>
+        <div><a href="#" data-email="researcher2@evadere.eu">researcher2@evadere.eu</a></div>
+      </div>
+
+      <div class="contact-entry">
+        <div class="contact-name">Jobs & Applications</div>
+        <div><a href="#" data-email="jobs@evadere.eu">jobs@evadere.eu</a></div>
+      </div>
+    </div>
+
+    <!-- Colonna destra: form -->
+    <div class="contact-form-wrapper">
+      <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('message sent');">
+        <label>Send to</label>
+        <input type="email" name="sendto" id="sendto" required value="coordinator@evadere.eu">
+        <label>Your name</label>
+        <input type="text" name="name" required>
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <label>Message</label>
+        <textarea name="message" rows="6" required></textarea>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </div>
+
+  </div>
+</main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div>© <span id="year-contact"></span> Progetto Lab</div>
-      <div><a href="mailto:info@example.com">info@example.com</a></div>
+  <div class="container footer-grid">
+
+    <!-- Colonna sinistra -->
+    <div class="footer-col left">
+      <div class="footer-brand">
+        <strong>EVADERE</strong>
+        <span class="muted">Fighting Antimicrobial Resistance</span>
+      </div>
+
+      <ul class="footer-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="jobs.html">Open Positions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <!-- Colonna destra -->
+    <div class="footer-col footer-eu right">
+      <img src="images/eu_flag.png" alt="EU Flag" class="eu-flag">
+      <p class="eu-text">
+        The EVADERE project receives funding from the European Union’s Horizon 2025 research 
+        and innovation programme under the Marie Skłodowska-Curie grant agreement no. 814066. 
+        This project website reflects only the authors' views and the European Union is not 
+        liable for any use that may be made of the information contained therein.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- TRADEMARK CENTRALE -->
+  <div class="footer-trademark">
+    © <span id="year-op"></span>2025 - EVADERE – Fighting Antimicrobial Resistance
+  </div>
+
+</footer>
 
   <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
 </body>
 </html>

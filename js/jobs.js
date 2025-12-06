@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* --- FOOTER YEAR --- */
-  const y = new Date().getFullYear();
-  document.querySelectorAll("[data-year], #year-op, #year-team, #year-news, #year")
-    .forEach(el => el && (el.textContent = y));
-
   /* --- helper NL -> <p> con margin per paragrafi --- */
   const formatText = (s = "") => {
     if (!s) return "";
@@ -60,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <p class="pos-actions">
               <a class="btn primary" href="${job.download_form || 'files/application_form.pdf'}" download>Download application form</a>
-              <a class="btn ghost" href="mailto:${job.email || 'jobs@example.com'}?subject=Candidatura%20${encodeURIComponent(job.title || '')}">Send application by email</a>
+              <a class="btn ghost" href="mailto:${job.email || 'jobs@example.com'}?subject=Application for%20${encodeURIComponent(job.title || '')}">Send application by email</a>
             </p>
           </div>
         `;
@@ -120,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ====================
      COUNTDOWN
      ==================== */
-  const deadline = "2026-01-31T23:59:59";
+  const deadline = "2026-04-30T14:59:59Z";
 
   function initCountdown(targetDateISO, ids) {
     const target = new Date(targetDateISO).getTime();

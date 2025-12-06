@@ -2,12 +2,6 @@
    main.js — Funzioni comuni
    ============================ */
 
-// --- FOOTER YEAR ---
-document.addEventListener("DOMContentLoaded", () => {
-  const y = new Date().getFullYear();
-  document.querySelectorAll("[data-year]").forEach(el => el.textContent = y);
-});
-
 // --- SCROLL TO TOP ---
 const scrollBtn = document.createElement('button');
 scrollBtn.id = "scroll-top";
@@ -15,12 +9,24 @@ scrollBtn.textContent = "↑";
 document.body.appendChild(scrollBtn);
 
 const scrollTopBtn = document.getElementById('scroll-top');
+const footer = document.querySelector('.site-footer');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) { // compare dopo 300px di scroll
-    scrollTopBtn.classList.add('show');
+  const scrollY = window.scrollY;
+  const windowH = window.innerHeight;
+  const footerTop = footer.getBoundingClientRect().top + scrollY;
+  const btnHeight = scrollTopBtn.offsetHeight;
+
+  // Mostra il tasto dopo 300px
+  if (scrollY > 300) scrollTopBtn.classList.add('show');
+  else scrollTopBtn.classList.remove('show');
+
+  // Ferma il tasto appena sopra il footer
+  const bottomLimit = footerTop + 10 - btnHeight; // 20px margine sopra il footer
+  if (scrollY + windowH > bottomLimit) {
+    scrollTopBtn.style.bottom = `${scrollY + windowH - bottomLimit - 10}px`;
   } else {
-    scrollTopBtn.classList.remove('show');
+    scrollTopBtn.style.bottom = '80px'; // default sopra footer
   }
 });
 
@@ -56,7 +62,7 @@ function initCountdown(targetDateISO, ids){
 
 // Countdown globale (per home e altre pagine)
 document.addEventListener("DOMContentLoaded", () => {
-  const deadline = "2026-01-31T23:59:59"; // impostabile per pagina specifica
+  const deadline = "2026-04-30T14:59:59Z"; // impostabile per pagina specifica
   initCountdown(deadline, {days: "cd-days", hours: "cd-hours", mins: "cd-mins", secs: "cd-secs"});
   initCountdown(deadline, {days: "cd-days-lg", hours: "cd-hours-lg", mins: "cd-mins-lg", secs: "cd-secs-lg"});
 });
