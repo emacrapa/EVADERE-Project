@@ -14,17 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         dailyTitle.textContent = n.title;
         dailyExcerpt.textContent = n.excerpt;
         dailyLink.href = `news.html?news=${n.id}`;
-
-        const dailyImage = document.getElementById('daily-image');
-
-        if(data.news[index]) {
-          const n = data.news[index];
-          dailyTitle.textContent = n.title;
-          dailyExcerpt.textContent = n.excerpt;
-          dailyLink.href = `news.html?news=${n.id}`;
-          if(n.image) dailyImage.src = n.image;
-          dailyImage.alt = n.title;
-        }
       }
     })
     .catch(err => console.error("Errore caricamento notizia del giorno:", err));
