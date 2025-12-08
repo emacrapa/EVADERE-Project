@@ -14,10 +14,10 @@
       </a>
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="team.html" class="nav-link">Team</a>
-        <a href="news.html" class="nav-link">News</a>
+        <!-- <a href="team.html" class="nav-link">Team</a> -->
+        <!-- <a href="news.html" class="nav-link">News</a> -->
         <a href="jobs.html" class="nav-link">Open Positions</a>
-        <a href="network.html" class="nav-link">Network</a>
+        <a href="consortium.html" class="nav-link">consortium</a>
         <a href="contact.html" class="nav-link active">Contact</a>
       </nav>
     </div>
@@ -43,6 +43,11 @@
       </div>
 
       <div class="contact-entry">
+        <div class="contact-name">Laura Masiero (Grant Manager)</div>
+        <div><a href="#" data-email="laura.masiero@unimib.it">laura.masiero@unimib.it</a></div>
+      </div>
+
+      <div class="contact-entry">
         <div class="contact-name">test1</div>
         <div><a href="#" data-email="test1">test1</a></div>
       </div>
@@ -55,13 +60,15 @@
 
     <!-- Colonna destra: form -->
     <div class="contact-form-wrapper">
-      <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('message sent');">
+      <form id="contact-form" class="contact-form">
         <label>Send to</label>
         <input type="email" name="sendto" id="sendto" required value="francesco.peri@unimib.it">
         <label>Your name</label>
         <input type="text" name="name" required>
-        <label>Email</label>
+        <label>Your email</label>
         <input type="email" name="email" required>
+        <label>Subject</label>
+        <input type="text" name="subject" id="subject" required>
         <label>Message</label>
         <textarea name="message" rows="6" required></textarea>
         <button class="btn primary" type="submit">Send</button>
@@ -83,10 +90,10 @@
 
       <ul class="footer-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="news.html">News</a></li>
+        <!-- <li><a href="team.html">Team</a></li> -->
+        <!-- <li><a href="news.html">News</a></li> -->
         <li><a href="jobs.html">Open Positions</a></li>
-        <li><a href="network.html">Network</a></li>
+        <li><a href="consortium.html">consortium</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>

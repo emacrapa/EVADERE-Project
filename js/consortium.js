@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("network-list");
 
-  fetch("data/network.json")
+  fetch("data/consortium.json")
     .then(r => r.json())
     .then(data => {
       (data.network || []).forEach(net => {
