@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${job.salary_employee ? `<h4>Gross salary to the employee</h4><p>${job.salary_employee}</p>` : ""}
 
             <p class="pos-actions">
-              <a class="btn primary" href="${job.download_form || 'files/application_form.pdf'}" download>Download consent form</a>
+              <a class="btn primary" href="${job.download_form || '"files/consent form.pdf",'}" download>Download consent form</a>
               <a class="btn ghost"
                 href="mailto:${job.email}
                 ?subject=Application for%20${encodeURIComponent(job.title || '')}
