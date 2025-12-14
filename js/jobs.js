@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <a class="btn ghost"
                 href="mailto:${job.email}
                 ?subject=Application for%20${encodeURIComponent(job.title || '')}
-                &cc=m.valvano@qub.ac.uk,info@evadere1.eu">
+                &cc=m.valvano@qub.ac.uk,info@evadere1.it">
                 Send application by email
               </a>
             </p>

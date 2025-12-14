@@ -7,12 +7,26 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <canvas id="bacteria-bg"></canvas>
+
   <header class="site-header">
     <div class="container header-inner">
+
+      <button class="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Open Positions</a>
+        <a href="consortium.html">Consortium</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
       <a class="brand" href="index.html">
         <img src="images/logo.png" alt="Progetto Lab Logo" class="brand-logo">
         EVADERE<span class="muted">Fighting Antimicrobial Resistance</span>
       </a>
+
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
         <!-- <a href="team.html" class="nav-link">Team</a> -->
@@ -48,7 +62,16 @@
           <li><a href="consortium.html">consortium</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+      
+      <div class="footer-toggle">
+        <label class="bacteria-toggle">
+          <input type="checkbox" id="toggle-bacteria">
+          <span class="checkmark"></span>
+          Show bacteria
+        </label>
       </div>
+    </div>
+
       <div class="footer-col footer-eu right">
         <img src="images/eu_flag.png" alt="EU Flag" class="eu-flag">
         <p class="eu-text">
@@ -64,5 +87,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/consortium.js"></script>
+  <script src="js/bacteria.js"></script>
 </body>
 </html>

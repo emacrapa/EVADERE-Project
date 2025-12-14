@@ -73,3 +73,50 @@ document.addEventListener("DOMContentLoaded", () => {
   initCountdown(deadline, {days: "cd-days", hours: "cd-hours", mins: "cd-mins", secs: "cd-secs"});
   initCountdown(deadline, {days: "cd-days-lg", hours: "cd-hours-lg", mins: "cd-mins-lg", secs: "cd-secs-lg"});
 });
+
+// --- HEADER MINIMIZE ON SCROLL ---
+const header = document.querySelector(".site-header");
+
+window.addEventListener("scroll", () => {
+  if (!header) return;
+  if (window.scrollY > 300) header.classList.add("minimized");
+  else header.classList.remove("minimized");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const burger = document.querySelector(".burger");
+  const mobileNav = document.querySelector(".mobile-nav");
+  if (!burger || !mobileNav) return;
+
+  // Stato scroll per auto-close
+  let lastScrollY = window.scrollY;
+
+  // Toggle burger al click
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    mobileNav.classList.toggle("open");
+  });
+
+  // Chiudi menu se si clicca su un link
+  mobileNav.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      burger.classList.remove("active");
+      mobileNav.classList.remove("open");
+    });
+  });
+
+  // Chiudi menu se scroll > 100px rispetto all'ultimo scroll
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (Math.abs(currentScroll - lastScrollY) > 100) {
+      if (mobileNav.classList.contains("open")) {
+        burger.classList.remove("active");
+        mobileNav.classList.remove("open");
+      }
+      lastScrollY = currentScroll;
+    }
+  });
+});
+
+
+
