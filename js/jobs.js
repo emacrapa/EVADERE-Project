@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const headerFixed = document.querySelector(".site-header");
       const headerHeight = headerFixed ? headerFixed.offsetHeight : 0;
       const marginTop = 10;
+      const HEADER_MIN_HEIGHT = 64;
+
 
       function animateOpen(body, acc) {
         body.classList.add("open");
@@ -88,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
           // scroll in tempo reale
           const rect = acc.getBoundingClientRect();
           const absoluteTop = rect.top + window.pageYOffset;
-          if (rect.top < headerHeight + marginTop) {
-            window.scrollTo({ top: absoluteTop - headerHeight - marginTop });
+          if (rect.top < HEADER_MIN_HEIGHT + marginTop) {
+            window.scrollTo({ top: absoluteTop - HEADER_MIN_HEIGHT - marginTop });
           }
 
           if (progress < 1) requestAnimationFrame(step);
@@ -154,43 +156,41 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // apertura istantanea via query
-function openJobById(jobId) {
-  if (!jobId) return;
-  const acc = Array.from(container.querySelectorAll(".position")).find(a => {
-    const header = a.querySelector(".acc-header");
-    return header && header.textContent.includes(jobId);
-  });
-  if (!acc) return;
+      function openJobById(jobId) {
+        if (!jobId) return;
+        const acc = Array.from(container.querySelectorAll(".position")).find(a => {
+          const header = a.querySelector(".acc-header");
+          return header && header.textContent.includes(jobId);
+        });
+        if (!acc) return;
 
-  const header = acc.querySelector(".acc-header");
-  const body = acc.querySelector(".acc-body");
+        const header = acc.querySelector(".acc-header");
+        const body = acc.querySelector(".acc-body");
 
-  // chiudi tutte le altre
-  container.querySelectorAll(".acc-body.open").forEach(b => {
-    b.classList.remove("open");
-    b.style.height = "0px";
-    const ic = b.previousElementSibling && b.previousElementSibling.querySelector(".acc-icon");
-    if (ic) ic.textContent = "+";
-  });
+        // chiudi tutte le altre
+        container.querySelectorAll(".acc-body.open").forEach(b => {
+          b.classList.remove("open");
+          b.style.height = "0px";
+          const ic = b.previousElementSibling && b.previousElementSibling.querySelector(".acc-icon");
+          if (ic) ic.textContent = "+";
+        });
 
-  // apertura istantanea (senza animazione)
-  body.classList.add("open");
-  body.style.height = body.scrollHeight + "px";
-  header.querySelector(".acc-icon").textContent = "−";
+        // apertura istantanea (senza animazione)
+        body.classList.add("open");
+        body.style.height = body.scrollHeight + "px";
+        header.querySelector(".acc-icon").textContent = "−";
 
-  // subito dopo forza auto per gestire resize futuri
-  setTimeout(() => body.style.height = "auto", 0);
+        // subito dopo forza auto per gestire resize futuri
+        setTimeout(() => body.style.height = "auto", 0);
 
-  // scroll immediato
-  const headerFixed = document.querySelector(".site-header");
-  const headerHeight = headerFixed ? headerFixed.offsetHeight : 0;
-  const marginTop = 10;
-  const rect = acc.getBoundingClientRect();
-  const absoluteTop = rect.top + window.pageYOffset;
-  window.scrollTo({ top: Math.max(0, absoluteTop - headerHeight - marginTop) });
-}
-
-
+        // scroll immediato
+        const headerFixed = document.querySelector(".site-header");
+        const headerHeight = headerFixed ? headerFixed.offsetHeight : 0;
+        const marginTop = 10;
+        const rect = acc.getBoundingClientRect();
+        const absoluteTop = rect.top + window.pageYOffset;
+        window.scrollTo({ top: Math.max(0, absoluteTop - HEADER_MIN_HEIGHT - marginTop) });
+      }
 
       openJobById(getQueryParam("job"));
 
