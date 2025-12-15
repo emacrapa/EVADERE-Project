@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ================== COLORI ================== */
   function randomBacteriaColor() {
     const colors = [
-      'rgba(250,245,230,0.9)',
-      'rgba(235,235,235,0.9)',
-      'rgba(255,250,200,0.9)',
-      'rgba(240,240,220,0.9)'
+      'rgba(255,255,255,1)',      // bianco
+      'rgba(200,210,220,1)',      // grigio chiaro-azzurro
+      'rgba(150,180,220,1)',      // azzurro
+      'rgba(100,150,220,1)'       // blu chiaro
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
@@ -49,9 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ================== DRAW ================== */
   function drawBacteria(b) {
     const gradient = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.r);
-    gradient.addColorStop(0, 'rgba(255,255,255,0.9)');
-    gradient.addColorStop(0.5, b.color.replace(/[\d\.]+\)$/,'0.3)'));
-    gradient.addColorStop(1, b.color);
+    // Nucleo centrale: intenso (~90%)
+    gradient.addColorStop(0, b.color.replace(/[\d\.]+\)$/,'0.9)'));
+    // Corpo interno: più trasparente (~20%)
+    gradient.addColorStop(0.3, b.color.replace(/[\d\.]+\)$/,'0.2)'));
+    // Outline esterno: leggermente più trasparente (~40%) per overall meno visibile
+    gradient.addColorStop(1, b.color.replace(/[\d\.]+\)$/,'0.4)'));
 
     ctx.fillStyle = gradient;
     ctx.beginPath();
@@ -64,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const bacteria = [];
 
   for (let i = 0; i < NUM_BACTERIA; i++) {
-    const r = 4 + Math.random() * 10;
+    const r = 6 + Math.random() * 10; // dimensione batteri
     bacteria.push({
       x: Math.random() * width,
       y: Math.random() * height,

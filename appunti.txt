@@ -5,7 +5,6 @@
 ‌paragrafare maggiormente i testi home Page, aggiungere testo sugli ESKAPE
 
 - Widget fondo home page
-‌impaginare meglio i widget a fondo pagina su homepage (al momento decentrati)
 ‌aggiungere un widget a fondo pagina homepage con il contatto LinkedIn del progetto evadere
 
 - Leggibilità mobile
@@ -16,8 +15,4 @@
 ‌aggiornare footer con testi legalmente significativi non i placeholder attuali
 
 -Annunci di lavoro
-‌sistemare scroll automatico annunci di lavoro, ora che l'header in quel punto della pagina è ridotto va considerata la differenza
 ‌rendere cliccabili i vari link sparsi per il sito esempio negli annunci di lavoro
-
-‌anche se non é Canon i batteri li voglio grigi o toni di blu, il giallo sembra sporco.
-‌spostare il burger menu tutto a destra? Così da avere il logo sempre allineato a sinistra?
